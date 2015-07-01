@@ -30,15 +30,6 @@ describe('Tests', () => {
   });
 });
 
-function awesomeFunction(parameter) {
-  if (typeof parameter == 'number') {
-    return '' + parameter;
-  }
-  if (parameter instanceof Date) {
-    return '' + parameter;
-  }
-  if (typeof parameter == 'string') {
-    return '' + parameter;
-  }
-  return 'string';
+function awesomeFunction(parameter='') {
+  return parameter + '';
 }
