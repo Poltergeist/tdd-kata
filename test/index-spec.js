@@ -11,16 +11,26 @@ describe('Tests', () => {
     it('a string', () => {
       assert.equal(typeof awesomeFunction(), 'string');
     });
-    it('takes a numer and returns that number as a string', () => {
+
+    it('takes a number and returns that number as a string', () => {
       let number = 10;
       assert.equal(awesomeFunction(number), '' + number);
     });
+
+    it('takes a date and returns that date as a string', () => {
+      let date = new Date;
+      assert.equal(awesomeFunction(date), date.toString());
+    })
+
   });
 });
 
-function awesomeFunction(number) {
-  if (typeof number == 'number') {
-    return '' + number;
+function awesomeFunction(parameter) {
+  if (typeof parameter == 'number') {
+    return '' + parameter;
+  }
+  if (parameter instanceof Date) {
+    return '' + parameter;
   }
   return 'string';
 }
