@@ -7,8 +7,8 @@ describe('Tests', () => {
     });
   });
 
-  describe('Function returns', () => {
-    it('a string', () => {
+  describe('Function', () => {
+    it('returns a string', () => {
       assert.equal(typeof awesomeFunction(), 'string');
     });
 
@@ -20,7 +20,12 @@ describe('Tests', () => {
     it('takes a date and returns that date as a string', () => {
       let date = new Date;
       assert.equal(awesomeFunction(date), date.toString());
-    })
+    });
+
+    it('takes a string and returns a string', () => {
+      let string = 'awesomeString';
+      assert.equal(awesomeFunction(string), string);
+    });
 
   });
 });
@@ -30,6 +35,9 @@ function awesomeFunction(parameter) {
     return '' + parameter;
   }
   if (parameter instanceof Date) {
+    return '' + parameter;
+  }
+  if (typeof parameter == 'string') {
     return '' + parameter;
   }
   return 'string';
