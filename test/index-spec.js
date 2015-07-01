@@ -1,4 +1,5 @@
 import assert from 'assert';
+import {awesomeFunction} from '../src/index.js';
 
 describe('Tests', () => {
   describe('Default checks', function() {
@@ -29,7 +30,3 @@ describe('Tests', () => {
 
   });
 });
-
-function awesomeFunction(parameter='') {
-  return parameter + '';
-}
